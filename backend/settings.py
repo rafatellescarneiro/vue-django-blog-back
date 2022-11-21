@@ -19,10 +19,13 @@ INSTALLED_APPS = [
     'django.utils.translation',
     'django.core.mail',
     'ckeditor',
-    'blog'
+    "blog",
+    "graphene_django",
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -74,6 +77,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+GRAPHENE = {
+    "SCHEMA": "blog.schema.schema",
+}
+
 AUTH_USER_MODEL = 'blog.User'
 
 LANGUAGE_CODE = 'en-us'
@@ -90,3 +97,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 MEDIA_URL = '/media/'
+
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = ("http://localhost:8080",)
