@@ -171,3 +171,4 @@ class Comment(models.Model):
     
     def get_number_of_likes(self):
         return self.likes.count()
+    
