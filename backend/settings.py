@@ -83,7 +83,7 @@ GRAPHENE = {
 
 AUTH_USER_MODEL = 'blog.User'
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
