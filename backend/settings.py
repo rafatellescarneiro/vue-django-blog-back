@@ -79,7 +79,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 GRAPHENE = {
     "SCHEMA": "blog.schema.schema",
+    'MIDDLEWARE': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
 }
+
+AUTHENTICATION_BACKENDS = [
+    'graphql_jwt.backends.JSONWebTokenBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 AUTH_USER_MODEL = 'blog.User'
 
